@@ -48,6 +48,5 @@ module.exports =
   </body>\n
 </html>
       ')
-
   gist: ->
     gists.getPublicGistsByUsername('devStepsize')
