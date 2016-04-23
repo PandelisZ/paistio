@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle footsize",
+        "command": "footsize:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "footsize",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "footsize:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
