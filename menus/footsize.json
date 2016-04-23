@@ -21,8 +21,8 @@
           "label": "footsize",
           "submenu": [
             {
-              "label": "Toggle",
-              "command": "footsize:toggle"
+              "label": "Convert",
+              "command": "footsize:convert"
             }
           ]
         }
