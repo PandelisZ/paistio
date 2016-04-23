@@ -1,4 +1,5 @@
 {
-  "atom-workspace": {
+  "atom-text-editor":{
+    "ctrl-alt-w": "footsize:html5"
   }
 }
