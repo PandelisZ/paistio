@@ -3,8 +3,7 @@
   "main": "./lib/footsize",
   "version": "0.0.1",
   "description": "Be more productive by reusing code snippets within atom",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "footsize:toggle",
     "ctrl-alt-o": "wordcount:toggle"
@@ -15,5 +14,6 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "public-gists": "0.0.2"
   }
 }
