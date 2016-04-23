@@ -1,14 +1,15 @@
 {
   "name": "footsize",
   "main": "./lib/footsize",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "0.0.1",
+  "description": "Be more productive by reusing code snippets within atom",
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "footsize:toggle"
+    "atom-workspace": "footsize:toggle",
+    "ctrl-alt-o": "wordcount:toggle"
   },
-  "repository": "https://github.com/atom/footsize",
+  "repository": "https://github.com/pandelisz/footsize",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
