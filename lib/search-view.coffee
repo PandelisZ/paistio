@@ -9,6 +9,7 @@ class searchView
     message = document.createElement('div')
     message.textContent = "The Wordcount package is Alive! It's ALIVE!"
     message.classList.add('message')
+
     inputitem = document.createElement('input')
     inputitem.type="text"
 
