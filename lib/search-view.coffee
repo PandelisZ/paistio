@@ -1,27 +1,22 @@
+{SelectListView} = require 'atom-space-pen-views'
+gists = require 'public-gists'
+
+
 module.exports =
-class searchView
-  constructor: (serializedState) ->
-    # Create root element
-    @element = document.createElement('div')
-    @element.classList.add('searchView')
+class MySelectListView extends SelectListView
+ menu: (itemList) ->
+   #super
+   @addClass('overlay from-top')
+   @setItems(itemList)
+   @panel ?= atom.workspace.addModalPanel(item: this)
+   @panel.show()
+   @focusFilterEditor()
 
-    # Create message element
-    message = document.createElement('div')
-    message.textContent = "The Wordcount package is Alive! It's ALIVE!"
-    message.classList.add('message')
+ viewForItem: (item) ->
+   "<li>#{item}</li>"
 
-    inputitem = document.createElement('input')
-    inputitem.type="text"
+ confirmed: (item) ->
+   console.log("#{item} was selected")
 
-    @element.appendChild(message)
-    @element.appendChild(inputitem)
-
-  # Returns an object that can be retrieved when package is activated
-  serialize: ->
-
-  # Tear down any state and detach
-  destroy: ->
-    @element.remove()
-
-  getElement: ->
-    @element
+ cancelled: ->
+   console.log("This view was cancelled")
