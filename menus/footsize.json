@@ -2,11 +2,9 @@
   "context-menu": {
     "atom-workspace": [
       {
-        "label": "Text",
+        "label": "Footsize",
         "submenu": [
-          {"label": "Inspect Element", "command": "core:inspect"},
-          {"type": "separator"},
-          {"label": "Selector All", "command": "core:select-all"},
+          {"label": "Include snippet", "command": "footsize:html5"},
           {"type": "separator"},
           {"label": "Deleted Selected Text", "command": "core:delete"}
         ]

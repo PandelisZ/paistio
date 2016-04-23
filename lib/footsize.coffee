@@ -46,6 +46,3 @@ module.exports =
   </body>\n
 </html>
       ')
-
-
-      
