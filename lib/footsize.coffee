@@ -1,3 +1,4 @@
+gists = require './gist'
 {CompositeDisposable} = require 'atom'
 
 module.exports =
@@ -9,6 +10,7 @@ module.exports =
       'footsize:convert': => @convert()
       'footsize:boostrapCDN': => @boostrapCDN()
       'footsize:html5': => @html5()
+      'footsize:gist': => @gist()
 
   deactivate: ->
     @subscriptions.dispose()
@@ -47,5 +49,5 @@ module.exports =
 </html>
       ')
 
-
-      
+  gist: ->
+    gists.getPublicGistsByUsername('devStepsize')
