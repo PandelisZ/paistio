@@ -29,6 +29,7 @@ module.exports = footsize =
     console.log 'Wordcount was toggled!'
 
     if @modalPanel.isVisible()
+
       @modalPanel.hide()
     else
       @modalPanel.show()
