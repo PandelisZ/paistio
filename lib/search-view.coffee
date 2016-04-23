@@ -4,7 +4,7 @@ _ = require 'underscore-plus'
 fuzzaldrinPlus = require 'fuzzaldrin-plus'
 
 module.exports =
-class CommandPaletteView extends SelectListView
+class SearchView extends SelectListView
 
   @config:
     useAlternateScoring:
