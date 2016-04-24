@@ -4,7 +4,8 @@
       {
         "label": "Footsize",
         "submenu": [
-          {"label": "Include snippet", "command": "footsize:selectText"}
+          {"label": "Save snippet", "command": "footsize:selectText"},
+          {"label": "View snippet", "command": "footsize:snippets"}
         ]
       }
     ]
@@ -17,8 +18,12 @@
           "label": "footsize",
           "submenu": [
             {
-              "label": "Convert",
-              "command": "footsize:convert"
+              "label": "Save Snippet",
+              "command": "footsize:selectText"
+            },
+            {
+              "label": "Snippet Viewer",
+              "command": "footsize:snippets"
             }
           ]
         }

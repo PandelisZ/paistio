@@ -1,5 +1,6 @@
 {
-  "atom-text-editor":{
-    "ctrl-alt-w": "footsize:html5"
+  "atom-text-editor": {
+    "ctrl-alt-c": "footsize:selectText",
+    "ctrl-alt-w": "footsize:snippets"
   }
 }

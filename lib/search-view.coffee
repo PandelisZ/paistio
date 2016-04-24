@@ -17,7 +17,7 @@ class MySelectListView extends SelectListView
 
  confirmed: (item) ->
    console.log("#{item} was selected")
-   @editor.insertText(item)
+   @editor.insertText(item.code)
    @panel.hide()
 
  cancelled: ->

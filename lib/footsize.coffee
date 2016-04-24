@@ -21,7 +21,7 @@ module.exports = footsize =
 
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace',
-      'footsize:toggle': => @toggle(),
+      'footsize:snippets': => @snippets(),
       'footsize:selectText': => @selectText()
 
   deactivate: ->
@@ -32,7 +32,7 @@ module.exports = footsize =
   serialize: ->
     searchViewState: @searchView.serialize()
 
-  toggle: ->
+  snippets: ->
     @searchView.menu(@output)
 
   selectText: ->
