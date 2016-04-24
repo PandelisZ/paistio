@@ -13,7 +13,7 @@ class MySelectListView extends SelectListView
    @focusFilterEditor()
 
  viewForItem: (item) ->
-   "<li>#{item}</li>"
+   "<li>#{item.name}</li>"
 
  confirmed: (item) ->
    console.log("#{item} was selected")

@@ -1,0 +1,26 @@
+[
+  {"name": "ipcmain_on.js", "code": "// In the main.js (main process)
+ipcMain.on('hello from the webpage!', function(event, arg){
+    console.log('recieved!');
+});"},
+  {"name": "ipcrenderer_send.js", "code":"//In index.html (renderer process)
+ipcRenderer.send('hello from the webpage!', 'my arg');"},
+{"name": "alchemy_api_get_sentiment_sample.py" , "code": "import requests
+
+def get_sentiment(body):
+    endpoint = 'http://gateway-a.watsonplatform.net/calls/text/TextGetTextSentiment'
+    parameters = {
+        'apikey': API_KEY,
+        'outputMode': 'json',
+        'text': body
+    }
+
+    r = requests.get(endpoint, params=parameters)
+    sentiment = None
+    if r.status_code == 200:
+        resp = r.json()
+        sentiment = resp['docSentiment']['type']
+        strength = resp['docSentiment'].get('score')
+    return sentiment"}
+
+]

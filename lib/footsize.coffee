@@ -37,5 +37,5 @@ module.exports = footsize =
 
   selectText: ->
     console.log(@editor.getSelectedText())
-    @output.push @editor.getSelectedText()
+    @output.push {'name': 'test', 'code': @editor.getSelectedText()}
     console.log(@output)
