@@ -4,9 +4,7 @@
       {
         "label": "Footsize",
         "submenu": [
-          {"label": "Include snippet", "command": "footsize:html5"},
-          {"type": "separator"},
-          {"label": "Deleted Selected Text", "command": "core:delete"}
+          {"label": "Include snippet", "command": "footsize:selectText"}
         ]
       }
     ]

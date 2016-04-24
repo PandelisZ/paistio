@@ -1,40 +1,28 @@
 searchView = require './search-view.coffee'
+#snippetNaming = require './snippet-naming.coffee'
 gists = require './gist'
 {CompositeDisposable} = require 'atom'
 
 module.exports = footsize =
   searchView: null
+  #snippetNaming: null
   modalPanel: null
   subscriptions: null
   resultsList: null
 
   activate: (state) ->
-    gists.getPublicGistsByUsername 'devStepsize', (error, result) ->
-      output = []
-      if error
-        throw new Error('There was an error', error)
-      i = 0
-      while i < result.length
-        filename = undefined
-        file = result[i].files
-        for key of file
-          filename = key
-        raw_url = file[filename].raw_url
-        request raw_url, (error, response, body) ->
-          if !error and response.statusCode == 200
-            output.push body
-            # Show the HTML for the Google homepage.
-          return
-        i++
-      @resultsList = result
-      return
+    @editor = atom.workspace.getActiveTextEditor()
+    @output = []
+
     @searchView = new searchView
+    #@snippetNaming = new snippetNaming
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
 
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace',
-      'footsize:toggle': => @toggle()
+      'footsize:toggle': => @toggle(),
+      'footsize:selectText': => @selectText()
 
   deactivate: ->
     @modalPanel.destroy()
@@ -45,4 +33,9 @@ module.exports = footsize =
     searchViewState: @searchView.serialize()
 
   toggle: ->
-    @searchView.menu(@resultsList)
+    @searchView.menu(@output)
+
+  selectText: ->
+    console.log(@editor.getSelectedText())
+    @output.push @editor.getSelectedText()
+    console.log(@output)
