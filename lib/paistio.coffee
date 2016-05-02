@@ -4,7 +4,7 @@ saveFile = require './saveFile.js'
 #snippetNaming = require './snippet-naming.coffee'
 {CompositeDisposable} = require 'atom'
 
-module.exports = footsize =
+module.exports = paistio =
   searchView: null
   #snippetNaming: null
   modalPanel: null
@@ -23,9 +23,9 @@ module.exports = footsize =
 
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace',
-      'footsize:snippets': => @snippets(),
-      'footsize:selectText': => @selectText()
-      'footsize:save': => @saveSnippets()
+      'paistio:snippets': => @snippets(),
+      'paistio:selectText': => @selectText()
+      'paistio:save': => @saveSnippets()
 
   deactivate: ->
     @modalPanel.destroy()

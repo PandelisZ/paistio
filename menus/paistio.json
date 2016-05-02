@@ -2,10 +2,10 @@
   "context-menu": {
     "atom-workspace": [
       {
-        "label": "Footsize",
+        "label": "paistio",
         "submenu": [
-          {"label": "Save snippet", "command": "footsize:selectText"},
-          {"label": "View snippet", "command": "footsize:snippets"}
+          {"label": "Save snippet", "command": "paistio:selectText"},
+          {"label": "View snippet", "command": "paistio:snippets"}
         ]
       }
     ]
@@ -15,15 +15,15 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "footsize",
+          "label": "paistio",
           "submenu": [
             {
               "label": "Save Snippet",
-              "command": "footsize:selectText"
+              "command": "paistio:selectText"
             },
             {
               "label": "Snippet Viewer",
-              "command": "footsize:snippets"
+              "command": "paistio:snippets"
             }
           ]
         }

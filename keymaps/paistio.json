@@ -1,0 +1,6 @@
+{
+  "atom-text-editor": {
+    "ctrl-alt-c": "paistio:selectText",
+    "ctrl-alt-q": "paistio:snippets"
+  }
+}

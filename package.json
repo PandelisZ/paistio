@@ -1,10 +1,10 @@
 {
-  "name": "footsize",
-  "main": "./lib/footsize",
+  "name": "paist.io",
+  "main": "./lib/paistio",
   "version": "0.0.1",
   "description": "Be more productive by reusing code snippets within atom",
-  "keywords": [],
-  "repository": "https://github.com/pandelisz/footsize",
+  "keywords": ["productivity", "snipepts"],
+  "repository": "https://github.com/pandelisz/paist.io",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
