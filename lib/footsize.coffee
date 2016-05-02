@@ -15,7 +15,7 @@ module.exports = footsize =
     @output = []
 
     @searchView = new searchView
-    @nameView = new nameView
+    #@nameView = new nameView
     #@snippetNaming = new snippetNaming
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
@@ -38,9 +38,8 @@ module.exports = footsize =
 
   selectText: ->
     console.log(@editor.getSelectedText())
-    @output.push {'name': '@nameView.confirmed()', 'code': @editor.getSelectedText()}
+    @output.push {'id': 'Todo: Make this work', 'item': @editor.getSelectedText()}
     console.log(@output)
 
   nameSnippet: ->
-    @nameView.menu()
     @selectText()

@@ -1,22 +1,21 @@
 {SelectListView} = require 'atom-space-pen-views'
-gists = require 'public-gists'
-
 
 module.exports =
 class MySelectListView extends SelectListView
- menu: () ->
-   @editor = atom.workspace.getActiveTextEditor()
+ initialize: ->
+   super
    @addClass('overlay from-top')
+   @setItems(['Hello', 'World'])
    @panel ?= atom.workspace.addModalPanel(item: this)
    @panel.show()
    @focusFilterEditor()
 
  viewForItem: (item) ->
-   "Please enter a name for your snippet"
+  @div "Type your answer:"
+  @subview 'answer', new TextEditorView(mini: true)
 
- confirmed: () ->
-   @panel.hide()
-   @getFilterQuery()
+ confirmed: (item) ->
+   console.log("#{item} was selected")
 
  cancelled: ->
    console.log("This view was cancelled")

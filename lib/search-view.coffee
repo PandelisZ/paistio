@@ -13,11 +13,11 @@ class MySelectListView extends SelectListView
    @focusFilterEditor()
 
  viewForItem: (item) ->
-   "<li><div class='primary-line file icon'>#{item.name}</div><div class='secondary-line path no-icon'>#{item.code}</div></li>"
+   "<li><div class='primary-line file icon'>#{item.id}</div><div class='secondary-line path no-icon'>#{item.item}</div></li>"
 
  confirmed: (item) ->
    console.log("#{item} was selected")
-   @editor.insertText(item.code)
+   @editor.insertText(item.item)
    @panel.hide()
 
  cancelled: ->
