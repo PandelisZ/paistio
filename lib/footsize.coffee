@@ -1,5 +1,6 @@
 searchView = require './search-view.coffee'
 nameView = require './name-view.coffee'
+saveFile = require './saveFile.js'
 #snippetNaming = require './snippet-naming.coffee'
 {CompositeDisposable} = require 'atom'
 
@@ -24,6 +25,7 @@ module.exports = footsize =
     @subscriptions.add atom.commands.add 'atom-workspace',
       'footsize:snippets': => @snippets(),
       'footsize:selectText': => @selectText()
+      'footsize:save': => @saveSnippets()
 
   deactivate: ->
     @modalPanel.destroy()
@@ -43,3 +45,6 @@ module.exports = footsize =
 
   nameSnippet: ->
     @selectText()
+
+  saveSnippets: ->
+    saveFile.save(@output)
