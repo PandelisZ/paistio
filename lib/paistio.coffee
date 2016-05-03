@@ -47,4 +47,4 @@ module.exports = paistio =
     @selectText()
 
   saveSnippets: ->
-    saveFile.save(@output)
+    saveFile.objSave(@output)

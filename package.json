@@ -10,7 +10,5 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "public-gists": "0.0.2",
-    "request": "^2.72.0"
   }
 }
