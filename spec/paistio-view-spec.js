@@ -1,8 +1,8 @@
 'use babel';
 
-import FootsizeView from '../lib/footsize-view';
+import paistioView from '../lib/paistio-view';
 
-describe('FootsizeView', () => {
+describe('paistioView', () => {
   it('has one valid test', () => {
     expect('life').toBe('easy');
   });

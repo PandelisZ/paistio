@@ -1,44 +1,44 @@
 'use babel';
 
-import Footsize from '../lib/footsize';
+import paistio from '../lib/paistio';
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
 // To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe('Footsize', () => {
+describe('paistio', () => {
   let workspaceElement, activationPromise;
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('footsize');
+    activationPromise = atom.packages.activatePackage('paistio');
   });
 
-  describe('when the footsize:toggle event is triggered', () => {
+  describe('when the paistio:toggle event is triggered', () => {
     it('hides and shows the modal panel', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
-      expect(workspaceElement.querySelector('.footsize')).not.toExist();
+      expect(workspaceElement.querySelector('.paistio')).not.toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'footsize:toggle');
+      atom.commands.dispatch(workspaceElement, 'paistio:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.footsize')).toExist();
+        expect(workspaceElement.querySelector('.paistio')).toExist();
 
-        let footsizeElement = workspaceElement.querySelector('.footsize');
-        expect(footsizeElement).toExist();
+        let paistioElement = workspaceElement.querySelector('.paistio');
+        expect(paistioElement).toExist();
 
-        let footsizePanel = atom.workspace.panelForItem(footsizeElement);
-        expect(footsizePanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'footsize:toggle');
-        expect(footsizePanel.isVisible()).toBe(false);
+        let paistioPanel = atom.workspace.panelForItem(paistioElement);
+        expect(paistioPanel.isVisible()).toBe(true);
+        atom.commands.dispatch(workspaceElement, 'paistio:toggle');
+        expect(paistioPanel.isVisible()).toBe(false);
       });
     });
 
@@ -51,11 +51,11 @@ describe('Footsize', () => {
       // workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement);
 
-      expect(workspaceElement.querySelector('.footsize')).not.toExist();
+      expect(workspaceElement.querySelector('.paistio')).not.toExist();
 
       // This is an activation event, triggering it causes the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'footsize:toggle');
+      atom.commands.dispatch(workspaceElement, 'paistio:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
@@ -63,10 +63,10 @@ describe('Footsize', () => {
 
       runs(() => {
         // Now we can test for view visibility
-        let footsizeElement = workspaceElement.querySelector('.footsize');
-        expect(footsizeElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'footsize:toggle');
-        expect(footsizeElement).not.toBeVisible();
+        let paistioElement = workspaceElement.querySelector('.paistio');
+        expect(paistioElement).toBeVisible();
+        atom.commands.dispatch(workspaceElement, 'paistio:toggle');
+        expect(paistioElement).not.toBeVisible();
       });
     });
   });
