@@ -1,4 +1,4 @@
-# footsize package
+# paist.io package
 
 Be more productive by reusing code snippets within the atom editor.
 
